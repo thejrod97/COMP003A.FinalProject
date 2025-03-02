@@ -123,7 +123,7 @@ namespace COMP003A.FinalProject
                 }
                 else if (input == 3)
                 {
-                    Console.WriteLine("\nPlease enter search method to find student.");
+                    Console.WriteLine("\nPlease enter search method to edit student.");
                     Console.WriteLine("1. By Student ID");
                     Console.WriteLine("2. By Student Last Name");
                     Console.Write("Enter your choice (1 or 2): ");
@@ -196,6 +196,32 @@ namespace COMP003A.FinalProject
 
                             Console.WriteLine("\nStudent information updated successfully!");
                         }
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nInvalid choice. Please try again.");
+                    }
+                }
+                else if (input == 4)
+                {
+                    if (students.Count == 0)
+                    {
+                        Console.WriteLine("No students to delete");
+                    }
+
+                    Console.WriteLine("\nPlease enter search method to delete student.");
+                    Console.WriteLine("1. By Student ID");
+                    Console.WriteLine("2. By Student Last Name");
+                    Console.Write("Enter your choice (1 or 2): ");
+                    int userChoice = int.Parse(Console.ReadLine());
+
+                    if (userChoice == 1)
+                    {
+
+                    }
+                    else if (userChoice == 2)
+                    {
+
                     }
                     else
                     {
