@@ -8,6 +8,8 @@ namespace COMP003A.FinalProject
     {
         static void Main(string[] args)
         {
+            List<Student> student = new List<Student>();
+
             while (true)
             {
                 Console.WriteLine("Student Course Registration System");
