@@ -12,7 +12,8 @@ namespace COMP003A.FinalProject
         {
             List<Student> students = new List<Student>();
 
-            int studentCount = 1;
+            int undergraduateCount = 1;
+            int graduateCount = 1;
 
             while (true)
             {
@@ -38,7 +39,7 @@ namespace COMP003A.FinalProject
                         for (int i = 0; i < 50; i++)
                         {
                              
-                            Console.WriteLine($"\nEnter the details for student {studentCount}");
+                            Console.WriteLine($"\nEnter the details for student {undergraduateCount}");
 
                             Console.Write("Enter Student ID: ");
                             int ugstudentID = int.Parse(Console.ReadLine());
@@ -56,8 +57,8 @@ namespace COMP003A.FinalProject
 
                             students.Add(undergraduate); // added to collection
 
-                            Console.WriteLine($"\nStudent {studentCount} Registration Successful!");
-                            studentCount++;
+                            Console.WriteLine($"\nStudent {undergraduateCount} Registration Successful!");
+                            undergraduateCount++;
 
                             Console.Write("\nAdd another student? (yes/no): ");
                             string userResponse = Console.ReadLine().ToLower();
@@ -73,7 +74,7 @@ namespace COMP003A.FinalProject
                         for (int i = 0; i < 50; i++)
                         {
 
-                            Console.WriteLine($"\nEnter the details for student {studentCount}");
+                            Console.WriteLine($"\nEnter the details for student {graduateCount}");
 
                             Console.Write("Enter Student ID: ");
                             int gstudentID = int.Parse(Console.ReadLine());
@@ -91,8 +92,8 @@ namespace COMP003A.FinalProject
 
                             students.Add(graduate); // added to collection
 
-                            Console.WriteLine($"\nStudent {studentCount} Registration Successful!");
-                            studentCount++;
+                            Console.WriteLine($"\nStudent {graduateCount} Registration Successful!");
+                            graduateCount++;
 
                             Console.Write("\nAdd another student? (yes/no): ");
                             string userResponse = Console.ReadLine().ToLower();
@@ -102,6 +103,18 @@ namespace COMP003A.FinalProject
                                 break;
                             }
                         }
+                    }
+                }
+                else if (input == 2)
+                {
+                    foreach (Student student in students)
+                    {
+                        Console.WriteLine($"\nStudent ID: {student.StudentID}");
+                        Console.WriteLine($"First Name: {student.FirstName}");
+                        Console.WriteLine($"Middle Name: {student.MiddleName}");
+                        Console.WriteLine($"Last Name: {student.LastName}");
+                        Console.WriteLine($"Type: {(student is Undergraduate ? "Undergraduate" : "Graduate")}");
+                        student.DegreeType();
                     }
                 }
             }

@@ -21,6 +21,8 @@ namespace COMP003A.FinalProject
 
         public override void DegreeType()
         {
+            Console.WriteLine("Associate of Arts: A.A.");
+            Console.WriteLine("Associate of Science: A.S.");
             Console.WriteLine("Bachelor of Arts: B.A.");
             Console.WriteLine("Bachelor of Science: B.S.");
         }
