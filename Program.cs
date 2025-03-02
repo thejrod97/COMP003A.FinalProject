@@ -111,6 +111,11 @@ namespace COMP003A.FinalProject
                 }
                 else if (input == 2)
                 {
+                    if (students.Count == 0)
+                    {
+                        Console.WriteLine("\nNo student to view.");
+                    }
+
                     foreach (Student student in students)
                     {
                         Console.WriteLine($"\nStudent ID: {student.StudentID}");
@@ -123,6 +128,12 @@ namespace COMP003A.FinalProject
                 }
                 else if (input == 3)
                 {
+                    if (students.Count == 0)
+                    {
+                        Console.WriteLine("\nNo student to edit");
+                        continue;
+                    }
+
                     Console.WriteLine("\nPlease enter search method to edit student.");
                     Console.WriteLine("1. By Student ID");
                     Console.WriteLine("2. By Student Last Name");
@@ -206,7 +217,8 @@ namespace COMP003A.FinalProject
                 {
                     if (students.Count == 0)
                     {
-                        Console.WriteLine("No students to delete");
+                        Console.WriteLine("\nNo student to delete");
+                        continue;
                     }
 
                     Console.WriteLine("\nPlease enter search method to delete student.");
@@ -217,11 +229,49 @@ namespace COMP003A.FinalProject
 
                     if (userChoice == 1)
                     {
+                        Console.Write("\nEnter the Student ID: ");
+                        int studentID = int.Parse(Console.ReadLine());
+                        StudentUtility.FindStudent(studentID);
 
+                        Student removeStudent = null;
+
+                        foreach (var student in students)
+                        {
+                            if (student.StudentID == studentID)
+                            {
+                                removeStudent = student;
+                                break;
+                            }
+                        }
+
+                        if (removeStudent != null)
+                        {
+                            students.Remove(removeStudent);
+                            Console.WriteLine("\nStudent has been deleted from the system.");
+                        }
                     }
                     else if (userChoice == 2)
                     {
+                        Console.Write("\nEnter the Last Name: ");
+                        string lastName = Console.ReadLine();
+                        StudentUtility.FindStudent(lastName);
 
+                        Student removeStudent = null;
+
+                        foreach (var student in students)
+                        {
+                            if (student.LastName == lastName)
+                            {
+                                removeStudent = student;
+                                break;
+                            }
+                        }
+
+                        if (removeStudent != null)
+                        {
+                            students.Remove(removeStudent);
+                            Console.WriteLine("\nStudent has been deleted from the system.");
+                        }
                     }
                     else
                     {
