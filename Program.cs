@@ -106,7 +106,7 @@ namespace COMP003A.FinalProject
                     }
                     else
                     {
-                        Console.WriteLine("Invalid student type. Please try again.");
+                        Console.WriteLine("\nInvalid student type. Please try again.");
                     }
                 }
                 else if (input == 2)
@@ -123,7 +123,7 @@ namespace COMP003A.FinalProject
                 }
                 else if (input == 3)
                 {
-                    Console.WriteLine("Please enter search method to find student.");
+                    Console.WriteLine("\nPlease enter search method to find student.");
                     Console.WriteLine("1. By Student ID");
                     Console.WriteLine("2. By Student Last Name");
                     Console.Write("Enter your choice (1 or 2): ");
@@ -131,15 +131,75 @@ namespace COMP003A.FinalProject
 
                     if (userChoice == 1)
                     {
+                        Console.Write("\nEnter the Student ID: ");
+                        int studentID = int.Parse(Console.ReadLine());
+                        StudentUtility.FindStudent(studentID);
 
+                        Student foundStudent = null;
+
+                        foreach (var student in students)
+                        {
+                            if (student.StudentID == studentID)
+                            {
+                                foundStudent = student;
+                                break;
+                            }
+                        }
+
+                        if (foundStudent != null)
+                        {
+                            Console.Write("\nEnter New Student ID: ");
+                            foundStudent.StudentID = int.Parse(Console.ReadLine());
+
+                            Console.Write("Enter New Student's First Name: ");
+                            foundStudent.FirstName = Console.ReadLine();
+
+                            Console.Write("Enter New Student's Middle Name (Press Enter to skip): ");
+                            foundStudent.MiddleName = Console.ReadLine();
+
+                            Console.Write("Enter New Student's Last Name: ");
+                            foundStudent.LastName = Console.ReadLine();
+
+                            Console.WriteLine("\nStudent information updated successfully!");
+                        }
                     }
                     else if (userChoice == 2)
                     {
+                        Console.Write("\nEnter the Last Name: ");
+                        string lastName = Console.ReadLine();
+                        StudentUtility.FindStudent(lastName);
 
+                        Student studentFound = null;
+
+                        foreach (var student in students)
+                        {
+                            if (student.LastName == lastName)
+                            {
+                                studentFound = student;
+                                break;
+                            }
+                        }
+
+                        if (studentFound != null)
+                        {
+                            Console.Write("\nEnter New Student ID: ");
+                            studentFound.StudentID = int.Parse(Console.ReadLine());
+
+                            Console.Write("Enter New Student's First Name: ");
+                            studentFound.FirstName = Console.ReadLine();
+
+                            Console.Write("Enter New Student's Middle Name (Press Enter to skip): ");
+                            studentFound.MiddleName = Console.ReadLine();
+
+                            Console.Write("Enter New Student's Last Name: ");
+                            studentFound.LastName = Console.ReadLine();
+
+                            Console.WriteLine("\nStudent information updated successfully!");
+                        }
                     }
                     else
                     {
-                        Console.WriteLine("Invalid choice. Please try again.");
+                        Console.WriteLine("\nInvalid choice. Please try again.");
                     }
                 }
             }

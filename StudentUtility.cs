@@ -13,12 +13,12 @@ namespace COMP003A.FinalProject
     {
         public static void FindStudent(int studentID)
         {
-
+            Console.WriteLine($"\nStudent ID found!: {studentID}");
         }
 
         public static void FindStudent(string lastName)
         {
-
+            Console.WriteLine($"\nStudent Last Name found!: {lastName}");
         }
     }
 }
