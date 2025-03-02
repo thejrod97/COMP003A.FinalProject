@@ -104,6 +104,10 @@ namespace COMP003A.FinalProject
                             }
                         }
                     }
+                    else
+                    {
+                        Console.WriteLine("Invalid student type. Please try again.");
+                    }
                 }
                 else if (input == 2)
                 {
@@ -115,6 +119,27 @@ namespace COMP003A.FinalProject
                         Console.WriteLine($"Last Name: {student.LastName}");
                         Console.WriteLine($"Type: {(student is Undergraduate ? "Undergraduate" : "Graduate")}");
                         student.DegreeType();
+                    }
+                }
+                else if (input == 3)
+                {
+                    Console.WriteLine("Please enter search method to find student.");
+                    Console.WriteLine("1. By Student ID");
+                    Console.WriteLine("2. By Student Last Name");
+                    Console.Write("Enter your choice (1 or 2): ");
+                    int userChoice = int.Parse(Console.ReadLine());
+
+                    if (userChoice == 1)
+                    {
+
+                    }
+                    else if (userChoice == 2)
+                    {
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid choice. Please try again.");
                     }
                 }
             }
