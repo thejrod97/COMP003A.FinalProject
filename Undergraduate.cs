@@ -7,10 +7,18 @@ using System.Threading.Tasks;
 namespace COMP003A.FinalProject
 {
     /// <summary>
-    /// Derived class
+    /// Derived class of the base student class in order to use the shared properties needed for modification.
+    /// Also overrided an abstract method from student class to implement the specific body of code for this class.
     /// </summary>
     internal class Undergraduate : Student
     {
+        /// <summary>
+        /// Undergraduate constructor to be later called in the main body of logic.
+        /// </summary>
+        /// <param name="ugstudentID"></param>
+        /// <param name="ugfirstName"></param>
+        /// <param name="ugmiddleName"></param>
+        /// <param name="uglastName"></param>
         public Undergraduate(int ugstudentID, string ugfirstName, string ugmiddleName, string uglastName)
         {
             StudentID = ugstudentID;
@@ -19,6 +27,9 @@ namespace COMP003A.FinalProject
             LastName = uglastName;
         }
 
+        /// <summary>
+        /// Overrided method with implementations.
+        /// </summary>
         public override void DegreeType()
         {
             Console.WriteLine("Associate of Arts: A.A.");
