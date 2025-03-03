@@ -278,6 +278,15 @@ namespace COMP003A.FinalProject
                         Console.WriteLine("\nInvalid choice. Please try again.");
                     }
                 }
+                else if (input == 5)
+                {
+                    Console.WriteLine("\nHave a nice day!");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("\nInvalid choice. Please try again.");
+                }
             }
         }
     }
