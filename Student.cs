@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace COMP003A.FinalProject
 {
@@ -14,7 +15,7 @@ namespace COMP003A.FinalProject
         // Fields 
         private int _studentID;
         private string _firstName;
-        private string _middleName;
+        private string _middleName = "";
         private string _lastName;
 
         // Properties
@@ -27,19 +28,34 @@ namespace COMP003A.FinalProject
         public string FirstName
         {
             get { return _firstName; }
-            set { _firstName = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    throw new ArgumentException("First name cannot be empty.");
+                _firstName = value;
+            }           
         }
 
         public string MiddleName
         {
             get { return _middleName; }
-            set { _middleName = value; }
+            set
+            {
+                if (value == null)
+                    throw new ArgumentException("Middle name cannot be null.");
+                _middleName = value;
+            }
         }
 
         public string LastName
         {
             get { return _lastName; }
-            set { _lastName = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    throw new ArgumentException("Last Name cannot be empty.");
+                _lastName = value;
+            }
         }
 
         // Method overriding
